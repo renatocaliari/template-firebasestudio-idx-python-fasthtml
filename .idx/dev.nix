@@ -28,11 +28,18 @@
       previews = {
         web = {
           # --- Direct Uvicorn Command ---
+          # command = [
+          #   ".venv/bin/python" # Chama o interpretador python
+          #   "main.py"          # Executa seu script diretamente
+          # ];
           command = [
-            ".venv/bin/python" # Chama o interpretador python
-            "main.py"          # Executa seu script diretamente
-           ];
-
+            ".venv/bin/uvicorn" # Execute uvicorn from the virtual env
+            "main:app"          # Target 'app' object in 'main.py' (ADJUST if needed)
+            "--host" "0.0.0.0"  # Bind to all interfaces
+            "--port" "$PORT"     # *** Use IDX predefined Python port ***
+            "--log-level" "info" # Uvicorn log level
+            "--reload"
+         ];
           # --- Explicit port attribute REMOVED as linter rejects it ---
           # We rely on manager="web" to auto-detect the port from the process.
 
