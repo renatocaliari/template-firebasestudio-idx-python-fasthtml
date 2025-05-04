@@ -16,6 +16,7 @@
       "ms-python.python"
       "rangav.vscode-thunder-client"
       "RooVeterinaryInc.roo-cline"
+      "ms-python.debugpy"
     ];
     
     # Configure web previews: https://developers.google.com/idx/guides/previews
@@ -28,11 +29,8 @@
         web = {
           # --- Direct Uvicorn Command ---
           command = [
-            ".venv/bin/uvicorn" # Execute uvicorn from the virtual env
-            "main:app"          # Target 'app' object in 'main.py' (ADJUST if needed)
-            "--host" "0.0.0.0"  # Bind to all interfaces
-            "--port" "$PORT"     # *** Use IDX predefined Python port ***
-            "--log-level" "info" # Uvicorn log level
+            ".venv/bin/python" # Chama o interpretador python
+            "main.py"          # Executa seu script diretamente
            ];
 
           # --- Explicit port attribute REMOVED as linter rejects it ---
