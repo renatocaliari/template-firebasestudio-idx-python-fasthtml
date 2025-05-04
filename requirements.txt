@@ -1,0 +1,8 @@
+# Dev environment
+pip
+autopep8
+
+starlette
+python-fasthtml
+fastlite
+MonsterUI

@@ -1,0 +1,28 @@
+{
+    "mcpServers": {
+      "desktop-commander": {
+        "command": "npx",
+        "args": ["-y", "@wonderwhy-er/desktop-commander"],
+        "alwaysAllow": [
+          "read_multiple_files",
+          "read_output",
+          "execute_command",
+          "get_config",
+          "set_config_value",
+          "read_file"
+        ]
+      },
+      "context7": {
+        "command": "npx",
+        "args": ["-y", "@upstash/context7-mcp@latest"],
+        "alwaysAllow": ["resolve-library-id", "get-library-docs"]
+      },
+      "webresearch": {
+        "command": "npx",
+        "args": ["-y", "@mzxrai/mcp-webresearch@latest"],
+        "disabled": false,
+        "alwaysAllow": ["search_google", "visit_page", "take_screenshot"]
+      }
+    }
+  }
+  
